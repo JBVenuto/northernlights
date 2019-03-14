@@ -2,9 +2,10 @@
 
 var aurora = {
     // Variables that will be used
-    userKp: 4,
+    userKp: 3,
     kpScores: [],
     auroraDates: [],
+    forcastHTML: [],
 
     // Request to gather data from NOAA
     forcast: function() {
@@ -31,13 +32,28 @@ var aurora = {
             }           
         }
         console.log(this.auroraDates);
+        this.buildHTML();
+    },
+
+    buildHTML: function() {
+        for (i = 0; i < this.auroraDates.length; i++) {
+            // let forcastItem;
+            let forcastItem = "<span><h3>";
+            forcastItem += this.auroraDates[i].date;
+            forcastItem += "</h3><h4>Kp: ";
+            forcastItem += this.auroraDates[i].kp;
+            forcastItem += "</h4></span>";
+            
+            this.forcastHTML.push(forcastItem);
+        }
+        console.log(this.forcastHTML);
         this.printForcast();
     },
     
     // Return scores that are equal to or greater than user's Kp
     printForcast: function(){
         let testVar = "test"
-        document.getElementById("forcast").innerHTML = "Cool! There will be an aurora " + testVar;
+        document.getElementById("forcast").innerHTML = this.forcastHTML;
         
     }
 
