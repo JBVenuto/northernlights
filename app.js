@@ -1,4 +1,4 @@
-var fetch = require('node-fetch');
+// var fetch = require('node-fetch');
 
 var aurora = {
     // Variables that will be used
@@ -31,10 +31,13 @@ var aurora = {
             }           
         }
         console.log(this.auroraDates);
+        this.printForcast();
     },
     
     // Return scores that are equal to or greater than user's Kp
     printForcast: function(){
+        let testVar = "test"
+        document.getElementById("forcast").innerHTML = "Cool! There will be an aurora " + testVar;
         
     }
 
