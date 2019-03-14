@@ -31,10 +31,12 @@ var aurora = {
             }           
         }
         console.log(this.auroraDates);
-    }
-
+    },
     
     // Return scores that are equal to or greater than user's Kp
+    printForcast: function(){
+        
+    }
 
 };
 
