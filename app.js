@@ -2,10 +2,11 @@
 
 var aurora = {
     // Variables that will be used
-    userKp: 3,
+    userKp: 4,
     kpScores: [],
     auroraDates: [],
     forcastHTML: [],
+    lastRecorded: 0,
 
     // Request to gather data from NOAA
     forcast: function() {
