@@ -17,10 +17,40 @@
             <!-- Jumbotron will go here -->
             <div class="jumbotron">
                 <img src="pictures/nicolas-j-leclercq-715306-unsplash.jpg" alt="Aurora Picture">
-                <div class="label">Find your light</div>
+                <div class="label">
+                    Find<br><br>your<br><br>light<br>
+                </div>
             </div>
-            <!-- Instructions on how to use the app -->
 
+            <!-- Instructions on how to use the app -->
+            <div class="instructionsMaps">
+                <!-- <div class="map"> -->
+                    <img src="pictures/NAMap.gif" alt="North America Map" class="map">
+                <!-- </div> -->
+                <!-- <div class="map"> -->
+                    <img src="pictures/EurasiaMap.gif" alt="North America Map" class="map">
+                <!-- </div> -->
+                <div class="instructions">
+                    <p>Use the maps to find your area's Kp value. For example: My area is between lines 3 and 5 so a Kp value of 4 should produce a visible aurora in my area.</p>
+                    <form>
+                        <select name="userKp">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                        <br>
+                        <input type="submit">
+                    </form>
+                </div>
+            </div>
+
+            <!-- Predicted visible auroras for the user -->
             <div id="forcast">There doesn't apper to be any auroras in the next week for your area.</div>
         </div>
 

@@ -1,6 +1,6 @@
 $dark-blue: #022C3E;
 $aurora-teal: #1DF4DB;
-$aurora-green: #1D5235;
+$aurora-green: #165C6E;
 @mixin borders() {
     border: 2px solid $aurora-teal;
     display: inline-block;
@@ -19,16 +19,42 @@ body {
     color: lightgray;
     width: 100%;
     height: 50px;
+    position: fixed;
+    z-index: 2;
 }
 
 .jumbotron {
+    position: relative;
+    padding-top: 50px;
     img {
         width: 100%;
         height: auto;
     }
     .label {
         color: white;
+        position: absolute;
+        width: 100%;
+        top: 65px;
+        right: 10px;
+        text-align: right;
     }
+}
+
+.instructions {
+    width: 33%;
+    display: inline-block;
+    color: lightgray;
+    text-align: center;
+    font-size: 16px;
+    
+    form {
+        margin-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+.map {
+    width: 33%;
+    height: auto;
 }
 
 .ephemeris {
