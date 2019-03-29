@@ -6,8 +6,6 @@ $aurora-green: #165C6E;
     display: inline-block;
     margin: 5px;
     padding: 3px;
-    color: lightgray;
-    text-align: center;
 }
 
 body {
@@ -57,6 +55,12 @@ body {
     height: auto;
 }
 
-.ephemeris {
-    @include borders();
+#forcast {
+    color: lightgray;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 16px;
+    .ephemeris {
+        @include borders();
+    }
 }

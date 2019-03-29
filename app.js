@@ -5,6 +5,7 @@ var aurora = {
     userKp: 3,
     kpScores: [],
     auroraDates: [],
+    visible: false,
     mostRecent: [],
     forcastHTML: "",
     lastRecordHTML: "<h2>The last recorded Kp was ",
@@ -27,6 +28,7 @@ var aurora = {
         for (i = 0; i < this.kpScores.length; i++) {
             if (this.kpScores[i][2] != 'observed' && parseInt(this.kpScores[i][1]) >= this.userKp) {
                 console.log(`Kp score of ${this.kpScores[i][1]} at ${this.kpScores[i][0]}`);
+                this.visible = true;
                 this.auroraDates.push({
                     "date": this.kpScores[i][0],
                     "kp": this.kpScores[i][1]
@@ -77,8 +79,9 @@ var aurora = {
     // Return scores that are equal to or greater than user's Kp
     printForcast: function(){
         document.getElementById("header").innerHTML = this.lastRecordHTML;
-        document.getElementById("forcast").innerHTML = this.forcastHTML;
-        
+        if (this.visible) {
+            document.getElementById("forcast").innerHTML = this.forcastHTML;
+        }
     }
 
 };
