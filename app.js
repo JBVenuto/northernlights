@@ -2,11 +2,11 @@
 
 var aurora = {
     // Variables that will be used
-    userKp: 4,
+    userKp: 3,
     kpScores: [],
     auroraDates: [],
     mostRecent: [],
-    forcastHTML: [],
+    forcastHTML: "",
     lastRecordHTML: "<h2>The last recorded Kp was ",
 
     // Request to gather data from NOAA
@@ -62,13 +62,13 @@ var aurora = {
     buildHTML: function() {
         for (i = 0; i < this.auroraDates.length; i++) {
             // let forcastItem;
-            let forcastItem = "<span><h3>";
+            let forcastItem = "<div class='ephemeris'><h3>";
             forcastItem += this.auroraDates[i].date;
-            forcastItem += "</h3><h4>Kp: ";
+            forcastItem += "</h3><hr><h4>Kp: ";
             forcastItem += this.auroraDates[i].kp;
-            forcastItem += "</h4></span>";
+            forcastItem += "</h4></div>";
             
-            this.forcastHTML.push(forcastItem);
+            this.forcastHTML += forcastItem;
         }
         console.log(this.forcastHTML);
         this.printForcast();

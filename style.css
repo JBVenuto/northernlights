@@ -1,0 +1,19 @@
+body {
+  background-color: #022C3E;
+}
+
+#header {
+  background-color: #1D5235;
+  color: lightgray;
+}
+
+.ephemeris {
+  border: 2px solid #1DF4DB;
+  display: inline-block;
+  margin: 5px;
+  padding: 3px;
+  color: lightgray;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

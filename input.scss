@@ -1,3 +1,24 @@
 $dark-blue: #022C3E;
 $aurora-teal: #1DF4DB;
-$aurora-green: #63C360;
+$aurora-green: #1D5235;
+@mixin borders() {
+    border: 2px solid $aurora-teal;
+    display: inline-block;
+    margin: 5px;
+    padding: 3px;
+    color: lightgray;
+    text-align: center;
+}
+
+body {
+    background-color: $dark-blue;
+}
+
+#header {
+    background-color: $aurora-green;
+    color: lightgray;
+}
+
+.ephemeris {
+    @include borders();
+}
