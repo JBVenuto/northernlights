@@ -3,37 +3,52 @@ body {
 }
 
 #header {
-  background-color: #165C6E;
+  font-family: "Roboto", sans-serif;
   color: lightgray;
+  background-color: #165C6E;
+  font-size: 16px;
   width: 100%;
-  height: 50px;
+  height: 30px;
   position: fixed;
   z-index: 2;
+}
+#header h2 {
+  padding-top: 7px;
 }
 
 .jumbotron {
   position: relative;
-  padding-top: 50px;
+  padding-top: 16px;
+  margin-bottom: 25px;
 }
 .jumbotron img {
   width: 100%;
   height: auto;
 }
 .jumbotron .label {
-  color: white;
+  color: #09DFD2;
   position: absolute;
   width: 100%;
   top: 65px;
-  right: 10px;
+  right: 20px;
   text-align: right;
+  font-family: "Germania One", cursive;
+  font-size: 70px;
+  filter: blur(1px);
+  opacity: 0.5;
+}
+.jumbotron .label p {
+  margin-top: 15px;
 }
 
 .instructions {
   width: 33%;
   display: inline-block;
-  color: lightgray;
   text-align: center;
+  font-family: "Roboto", sans-serif;
+  color: lightgray;
   font-size: 16px;
+  margin: 1px;
 }
 .instructions form {
   margin-top: 15px;
@@ -46,6 +61,7 @@ body {
 }
 
 #forcast {
+  font-family: "Roboto", sans-serif;
   color: lightgray;
   text-align: center;
   margin-bottom: 25px;
