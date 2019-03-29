@@ -5,8 +5,9 @@ var aurora = {
     userKp: 4,
     kpScores: [],
     auroraDates: [],
+    mostRecent: [],
     forcastHTML: [],
-    lastRecorded: "<h2>The last recorded Kp was ",
+    lastRecordHTML: "<h2>The last recorded Kp was ",
 
     // Request to gather data from NOAA
     forcast: function() {
@@ -31,10 +32,13 @@ var aurora = {
                     "kp": this.kpScores[i][1]
                 });
             }  
-            if (this.kpScores[i][2] === 'estimated') {
-                console.log(`Estimated kp at i: ${i} \n at ${this.kpScores[i][0]}`);
+            if (this.kpScores[i][2] === 'observed') {
+                this.mostRecent = this.kpScores[i];
             }        
         }
+        console.log(`Most recent reading: ${this.mostRecent}`);
+        console.log(this.mostRecent[0]);
+        console.log(this.mostRecent[1]);
         console.log(this.auroraDates);
 
         this.lastKpRecorded();
@@ -43,13 +47,15 @@ var aurora = {
 
     // Set the last recorded Kp value 
     lastKpRecorded: function() {
-        let recentKp = this.kpScores[61][1];
-        let lastTime = this.kpScores[61][0];
+        let recentKp = this.mostRecent[1];
+        let lastTime = this.mostRecent[0];
 
-        this.lastRecorded += recentKp;
-        this.lastRecorded += " at ";
-        this.lastRecorded += lastTime;
-        this.lastRecorded += "</h2>";
+        this.lastRecordHTML += recentKp;
+        this.lastRecordHTML += " at ";
+        this.lastRecordHTML += lastTime;
+        this.lastRecordHTML += "</h2>";
+
+        console.log(this.lastRecordHTML);
     },
 
     // Function to build the HTML code to populate the website
@@ -70,7 +76,7 @@ var aurora = {
     
     // Return scores that are equal to or greater than user's Kp
     printForcast: function(){
-        document.getElementById("header").innerHTML = this.lastRecorded;
+        document.getElementById("header").innerHTML = this.lastRecordHTML;
         document.getElementById("forcast").innerHTML = this.forcastHTML;
         
     }
