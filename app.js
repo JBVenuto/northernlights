@@ -2,7 +2,7 @@
 
 var aurora = {
     // Variables that will be used
-    userKp: 3,
+    userKp: 4,
     kpScores: [],
     auroraDates: [],
     visible: false,
@@ -18,10 +18,6 @@ var aurora = {
         .then(json => this.kpScores = json)
         .then(() => this.findAurora());
     },
-
-    // Store the user's Kp
-    // (This function will be completed after app is functional)
-
 
     // Check the estimated Kp scores compared to the user's Kp score
     findAurora: function() {
@@ -45,6 +41,20 @@ var aurora = {
 
         this.lastKpRecorded();
         this.buildHTML();
+    },
+
+    // Store the user's Kp
+    // (This function will be completed after app is functional)
+    setKp: function() {
+        aurora.userKp = document.getElementById("userKpSelector").value;
+        console.log(`User kp: ${aurora.userKp}`);
+        aurora.auroraDates = [];
+        aurora.mostRecent = [];
+        aurora.forcastHTML = "";
+        aurora.lastRecordHTML = "<h2>The last recorded Kp was ";
+
+
+        aurora.findAurora();
     },
 
     // Set the last recorded Kp value 
@@ -72,8 +82,10 @@ var aurora = {
             
             this.forcastHTML += forcastItem;
         }
-        console.log(this.forcastHTML);
+        // console.log(this.forcastHTML);
         this.printForcast();
+        // j = document.getElementById("userKpSelector").value
+        console.log(`set Kp: ${this.userKp}`);
     },
     
     // Return scores that are equal to or greater than user's Kp
@@ -82,9 +94,18 @@ var aurora = {
         if (this.visible) {
             document.getElementById("forcast").innerHTML = this.forcastHTML;
         }
+    },
+
+    testFun: function() {
+        alert("Hello World");
     }
 
 };
 
 // Call the function to collect Kp data
 aurora.forcast();
+
+// Event listener for user change of Kp
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById("kpBtn").addEventListener('click', aurora.setKp);
+})

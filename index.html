@@ -32,12 +32,12 @@
                 <!-- </div> -->
                 <div class="instructions">
                     <p>Use the maps to find your area's Kp value. For example: My area is between lines 3 and 5 so a Kp value of 4 should produce a visible aurora in my area.</p>
-                    <form>
-                        <select name="userKp">
+                    <form id="setUserKpForm">
+                        <select id="userKpSelector">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
-                            <option value="4">4</option>
+                            <option value="4" selected="selected">4</option>
                             <option value="5">5</option>
                             <option value="6">6</option>
                             <option value="7">7</option>
@@ -45,7 +45,7 @@
                             <option value="9">9</option>
                         </select>
                         <br>
-                        <input type="submit">
+                        <button id="kpBtn" type="button">Submit</button>
                     </form>
                 </div>
             </div>
