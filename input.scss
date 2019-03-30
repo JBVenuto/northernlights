@@ -76,6 +76,16 @@ body {
         padding-bottom: 15px;
     }
 }
+#kpBtn {
+    background-color: $aurora-green;
+    color: lightgray;
+    // border-color: $aurora-teal;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 8px;
+    box-shadow: 5px 8px 6px 0 rgba(0,0,0,1);
+}
+
 .map {
     width: 95%;
     height: auto;

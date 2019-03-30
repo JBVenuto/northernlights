@@ -60,6 +60,15 @@ body {
   padding-bottom: 15px;
 }
 
+#kpBtn {
+  background-color: #165C6E;
+  color: lightgray;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 8px;
+  box-shadow: 5px 8px 6px 0 black;
+}
+
 .map {
   width: 95%;
   height: auto;
