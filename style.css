@@ -29,20 +29,25 @@ body {
   color: #09DFD2;
   position: absolute;
   width: 100%;
-  top: 65px;
+  top: 45px;
   right: 20px;
   text-align: right;
   font-family: "Germania One", cursive;
-  font-size: 70px;
+  font-size: 24px;
   filter: blur(1px);
   opacity: 0.5;
 }
 .jumbotron .label p {
-  margin-top: 15px;
+  margin-top: 5px;
+}
+
+.instructionsMap {
+  margin-left: 55px;
+  margin-right: 5px;
 }
 
 .instructions {
-  width: 33%;
+  width: 95%;
   display: inline-block;
   text-align: center;
   font-family: "Roboto", sans-serif;
@@ -56,7 +61,7 @@ body {
 }
 
 .map {
-  width: 33%;
+  width: 95%;
   height: auto;
 }
 
@@ -72,6 +77,33 @@ body {
   display: inline-block;
   margin: 5px;
   padding: 3px;
+}
+
+@media only screen and (min-width: 600px) {
+  .map {
+    width: 49%;
+  }
+
+  .jumbotron .label {
+    font-size: 46px;
+  }
+  .jumbotron .label p {
+    margin-top: 15px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .map {
+    width: 33%;
+  }
+
+  .instructions {
+    width: 33%;
+  }
+
+  .jumbotron .label {
+    font-size: 70px;
+    top: 65px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
