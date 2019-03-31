@@ -88,6 +88,37 @@ body {
   padding: 3px;
 }
 
+.modal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 75px;
+}
+.modal .fullMap {
+  display: block;
+  width: 845px;
+  height: 422px;
+  margin: auto;
+  border: 1px solid #1DF4DB;
+}
+.modal .close {
+  color: lightgray;
+  font-size: 40px;
+  font-weight: bold;
+  position: relative;
+  left: 822px;
+  bottom: 430px;
+}
+.modal .close:hover {
+  color: gray;
+}
+
 @media only screen and (min-width: 600px) {
   .map {
     width: 49%;

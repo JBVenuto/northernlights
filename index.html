@@ -25,13 +25,13 @@
 
             <!-- Instructions on how to use the app -->
             <div class="instructionsMaps">
-                <a href="pictures/NAMap.gif" target="_blank">
-                    <img src="pictures/NAMap.gif" alt="North America Map" class="map">
-                </a>
+                <!-- <a href="pictures/NAMap.gif" target="_blank"> -->
+                    <img src="pictures/NAMap.gif" alt="North America Map" class="map" id="naMap">
+                <!-- </a> -->
 
-                <a href="pictures/EurasiaMap.gif" target="_blank">
-                    <img src="pictures/EurasiaMap.gif" alt="North America Map" class="map">
-                </a>
+                <!-- <a href="pictures/EurasiaMap.gif" target="_blank"> -->
+                    <img src="pictures/EurasiaMap.gif" alt="North America Map" class="map" id="eaMap">
+                <!-- </a> -->
 
                 <div class="instructions">
                     <p>The Kp index lets you know the chance of seeing an aurora. The higher the Kp the greater the chance. These maps are an estimate on where an aurora is visible based on the Kp index. Find your location on the map to figure out how high the Kp index needs to be to see it in your location.</p>
@@ -55,6 +55,21 @@
 
             <!-- Predicted visible auroras for the user -->
             <div id="forcast">There doesn't apper to be any auroras in the next week for your area.</div>
+
+            <!-- Modal that will display the map if clicked -->
+            <div class="modal" id="naModal">
+                <div class="fullMap">
+                    <img src="pictures/NAMap.gif" alt="North America Map">
+                    <span id="naClose">&times;</span>
+                </div>
+            </div>
+
+            <div class="modal" id="eaModal">
+                <div class="fullMap">
+                    <img src="pictures/EurasiaMap.gif" alt="Eurasia Map">
+                    <span id="eaClose">&times;</span>
+                </div>
+            </div>
         </div>
 
     </body>
