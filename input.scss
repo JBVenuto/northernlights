@@ -100,6 +100,13 @@ body {
     height: auto;
 }
 
+.forcastHeader {
+    @include font-style();
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
 #forcast {
     @include font-style();
     text-align: center;
