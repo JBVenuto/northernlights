@@ -6,7 +6,7 @@ body {
   font-family: "Roboto", sans-serif;
   color: lightgray;
   background-color: #165C6E;
-  font-size: 16px;
+  font-size: 12px;
   width: 100%;
   height: 30px;
   position: fixed;
@@ -107,7 +107,7 @@ body {
   margin: auto;
   border: 1px solid #1DF4DB;
 }
-.modal .close {
+.modal #naClose {
   color: lightgray;
   font-size: 40px;
   font-weight: bold;
@@ -115,11 +115,26 @@ body {
   left: 822px;
   bottom: 430px;
 }
-.modal .close:hover {
+.modal #naClose:hover {
+  color: gray;
+}
+.modal #eaClose {
+  color: lightgray;
+  font-size: 40px;
+  font-weight: bold;
+  position: relative;
+  left: 822px;
+  bottom: 430px;
+}
+.modal #eaClose:hover {
   color: gray;
 }
 
 @media only screen and (min-width: 600px) {
+  #header {
+    font-size: 16px;
+  }
+
   .map {
     width: 49%;
   }
