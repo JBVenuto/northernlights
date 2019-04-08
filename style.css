@@ -155,9 +155,13 @@ body {
     width: 33%;
   }
 
+  .jumbotron img {
+    height: 350px;
+    object-fit: cover;
+  }
   .jumbotron .label {
     font-size: 70px;
-    top: 65px;
+    top: 40px;
   }
 }
 

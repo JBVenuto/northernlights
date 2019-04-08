@@ -164,8 +164,14 @@ body {
 @media only screen and (min-width: 992px) {
     .map {width: 33%}
     .instructions {width: 33%}
-    .jumbotron .label {
+    .jumbotron {
+        img {
+            height: 350px;
+            object-fit: cover;
+        }
+        .label {
         font-size: 70px;
-        top: 65px;
+        top: 40px;
+        }
     }
 }
