@@ -19,7 +19,7 @@ body {
 .jumbotron {
   position: relative;
   padding-top: 16px;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
 }
 .jumbotron img {
   width: 100%;
@@ -39,11 +39,6 @@ body {
 }
 .jumbotron .label p {
   margin-top: 5px;
-}
-
-.instructionsMap {
-  margin-left: 55px;
-  margin-right: 5px;
 }
 
 .instructions {
