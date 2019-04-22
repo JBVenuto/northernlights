@@ -1,4 +1,3 @@
-// var fetch = require('node-fetch');
 
 var aurora = {
     // Variables that will be used
@@ -11,7 +10,6 @@ var aurora = {
     lastRecordHTML: "<h2>The last recorded Kp was ",
 
     // Request to gather data from NOAA
-    // *********************************** Moved to Model **************************************************
     forcast: function() {
         fetch('https://services.swpc.noaa.gov/products/noaa-planetary-k-index-forecast.json')
         .then(res => res.json())
@@ -19,10 +17,8 @@ var aurora = {
         .then(json => this.kpScores = json)
         .then(() => this.findAurora());
     },
-    // **********************************************************************************************
 
     // Check the estimated Kp scores compared to the user's Kp score
-    // *********************************** Moved to Model **************************************************
     findAurora: function() {
         for (i = 0; i < this.kpScores.length; i++) {
             if (this.kpScores[i][2] != 'observed' && parseInt(this.kpScores[i][1]) >= this.userKp) {
@@ -45,7 +41,6 @@ var aurora = {
         this.lastKpRecorded();
         this.buildHTML();
     },
-    // **********************************************************************************************
 
     // Store the user's Kp
     // (This function will be completed after app is functional)
@@ -61,7 +56,6 @@ var aurora = {
 
         aurora.findAurora();
     },
-    // =====================================================================================================
 
     // Set the last recorded Kp value 
     // CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER
@@ -76,7 +70,6 @@ var aurora = {
 
         console.log(this.lastRecordHTML);
     },
-    // =======================================================================================================
 
     // Function to build the HTML code to populate the website
     // CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER
@@ -96,7 +89,6 @@ var aurora = {
         // j = document.getElementById("userKpSelector").value
         console.log(`set Kp: ${this.userKp}`);
     },
-    // ========================================================================================================
     
     // Return scores that are equal to or greater than user's Kp
     printForcast: function(){
