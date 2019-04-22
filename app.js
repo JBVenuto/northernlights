@@ -11,6 +11,7 @@ var aurora = {
     lastRecordHTML: "<h2>The last recorded Kp was ",
 
     // Request to gather data from NOAA
+    // *********************************** Moved to Model **************************************************
     forcast: function() {
         fetch('https://services.swpc.noaa.gov/products/noaa-planetary-k-index-forecast.json')
         .then(res => res.json())
@@ -18,8 +19,10 @@ var aurora = {
         .then(json => this.kpScores = json)
         .then(() => this.findAurora());
     },
+    // **********************************************************************************************
 
     // Check the estimated Kp scores compared to the user's Kp score
+    // *********************************** Moved to Model **************************************************
     findAurora: function() {
         for (i = 0; i < this.kpScores.length; i++) {
             if (this.kpScores[i][2] != 'observed' && parseInt(this.kpScores[i][1]) >= this.userKp) {
@@ -42,9 +45,11 @@ var aurora = {
         this.lastKpRecorded();
         this.buildHTML();
     },
+    // **********************************************************************************************
 
     // Store the user's Kp
     // (This function will be completed after app is functional)
+    // CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER
     setKp: function() {
         aurora.userKp = document.getElementById("userKpSelector").value;
         console.log(`User kp: ${aurora.userKp}`);
@@ -56,8 +61,10 @@ var aurora = {
 
         aurora.findAurora();
     },
+    // =====================================================================================================
 
     // Set the last recorded Kp value 
+    // CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER
     lastKpRecorded: function() {
         let recentKp = this.mostRecent[1];
         let lastTime = this.mostRecent[0];
@@ -69,8 +76,10 @@ var aurora = {
 
         console.log(this.lastRecordHTML);
     },
+    // =======================================================================================================
 
     // Function to build the HTML code to populate the website
+    // CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER
     buildHTML: function() {
         for (i = 0; i < this.auroraDates.length; i++) {
             // let forcastItem;
@@ -87,6 +96,7 @@ var aurora = {
         // j = document.getElementById("userKpSelector").value
         console.log(`set Kp: ${this.userKp}`);
     },
+    // ========================================================================================================
     
     // Return scores that are equal to or greater than user's Kp
     printForcast: function(){
@@ -104,43 +114,3 @@ var aurora = {
 
 // Call the function to collect Kp data
 aurora.forcast();
-
-// DOM interactions
-document.addEventListener('DOMContentLoaded', function () {
-    // Event listener for user change of Kp
-    document.getElementById("kpBtn").addEventListener('click', aurora.setKp);
-
-    // Map modals
-    const naModal = document.getElementById("naModal");
-    const eaModal = document.getElementById("eaModal");
-    // Buttons to trigger modals
-    const naBtn = document.getElementById("naMap");
-    const eaBtn = document.getElementById("eaMap");
-    const naClose = document.getElementById("naClose");
-    const eaClose = document.getElementById("eaClose");
-
-    // Open North American map modal
-    naBtn.onclick = function () {
-        naModal.style.display = "block";
-    }
-    // Open Eurasia map modal
-    eaBtn.onclick = function () {
-        eaModal.style.display = "block";
-    }
-
-    // Close the modal
-    naClose.onclick = function () {
-        naModal.style.display = "none";
-    }
-    eaClose.onclick = function () {
-        eaModal.style.display = "none";
-    }
-    window.onclick = function () {
-        if (event.target == naModal) {
-            naModal.style.display = "none";
-        }
-        if (event.target == eaModal) {
-            eaModal.style.display = "none";
-        }
-    }
-})
