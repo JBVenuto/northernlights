@@ -133,6 +133,21 @@ body {
   color: gray;
 }
 
+.footer {
+  background-color: #165C6E;
+  color: lightgray;
+  padding: 10px;
+  line-height: 1.5;
+}
+.footer p {
+  font-size: 16px;
+  text-decoration: underline;
+}
+.footer a {
+  font-size: 14px;
+  color: #1DF4DB;
+}
+
 @media only screen and (min-width: 600px) {
   #header {
     font-size: 16px;

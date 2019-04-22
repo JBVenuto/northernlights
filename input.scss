@@ -150,6 +150,23 @@ body {
     }
 }
 
+.footer {
+    background-color: $aurora-green;
+    color: lightgray;
+    padding: 10px;
+    line-height: 1.5;
+
+
+    p {
+        font-size: 16px;
+        text-decoration: underline;
+    }
+    a {
+        font-size: 14px;
+        color: $aurora-teal;
+    }
+}
+
 // Medium size screens
 @media only screen and (min-width: 600px) {
     #header {font-size: 16px;}
