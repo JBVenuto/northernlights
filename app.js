@@ -97,11 +97,6 @@ var aurora = {
             document.getElementById("forcast").innerHTML = this.forcastHTML;
         }
     },
-
-    testFun: function() {
-        alert("Hello World");
-    }
-
 };
 
 // Call the function to collect Kp data
