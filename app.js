@@ -13,7 +13,6 @@ var aurora = {
     forcast: function() {
         fetch('https://services.swpc.noaa.gov/products/noaa-planetary-k-index-forecast.json')
         .then(res => res.json())
-        // .then(json => console.log(json))
         .then(json => this.kpScores = json)
         .then(() => this.findAurora());
     },
@@ -43,8 +42,6 @@ var aurora = {
     },
 
     // Store the user's Kp
-    // (This function will be completed after app is functional)
-    // CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER
     setKp: function() {
         aurora.userKp = document.getElementById("userKpSelector").value;
         console.log(`User kp: ${aurora.userKp}`);
@@ -58,7 +55,6 @@ var aurora = {
     },
 
     // Set the last recorded Kp value 
-    // CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER
     lastKpRecorded: function() {
         let recentKp = this.mostRecent[1];
         let lastTime = this.mostRecent[0];
@@ -72,7 +68,6 @@ var aurora = {
     },
 
     // Function to build the HTML code to populate the website
-    // CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER CONTROLLER
     buildHTML: function() {
         for (i = 0; i < this.auroraDates.length; i++) {
             // let forcastItem;
@@ -84,9 +79,7 @@ var aurora = {
             
             this.forcastHTML += forcastItem;
         }
-        // console.log(this.forcastHTML);
         this.printForcast();
-        // j = document.getElementById("userKpSelector").value
         console.log(`set Kp: ${this.userKp}`);
     },
     
